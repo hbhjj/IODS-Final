@@ -1,0 +1,18 @@
+---
+title: "IODS Final"
+author: "Jesse Haapoja"
+output:
+  html_document:
+    theme: cosmo
+    toc: true
+    toc_depth: 2
+    fig_caption: true
+    fig_width: 6
+    fig_height: 4
+    code_folding: hide
+---
+
+***
+  
+```{r child = "IODS_Final_Exercise.Rmd"}
+```
