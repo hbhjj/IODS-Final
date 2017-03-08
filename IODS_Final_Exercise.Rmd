@@ -2,6 +2,9 @@
 title: "Final exercise - Using logistic regression to predict government/opposition membership from Yle Vaalikone-data"
 author: "Jesse Haapoja jesse.haapoja@helsinki.fi"
 date: "3/8/2017"
+output:
+  html_document:
+    code_folding: show
 
 ---
 
