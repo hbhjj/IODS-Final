@@ -502,7 +502,7 @@ loss_func(class = vaalikone_m$gov_or_op_recoded, prob = vaalikone_m$all_f)</code
 <pre class="r"><code>library(boot)
 cv &lt;- cv.glm(data = vaalikone_m, cost = loss_func, glmfit = vaam2, K = 10)
 cv$delta[1]</code></pre>
-<pre><code>## [1] 0.2507102</code></pre>
+<pre><code>## [1] 0.2528409</code></pre>
 <p>Using 10-fold cross validation, the model has (at least in this run) around 25% error rate, similar to the rate I got without splitting the data.</p>
 <p>Now, as added fun, lets see which parties have most people on the wrong side of the government-opposition gap.</p>
 <pre class="r"><code>table(parties = vaalikone_m$party, prediction = vaalikone_m$prediction)</code></pre>
