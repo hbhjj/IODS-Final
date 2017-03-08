@@ -107,7 +107,7 @@ In this study I will examine, whether answers of parliament election candidates 
 
 ##Introduction
 
-The data set used in this work are asnwers candidates gave to Yle's vaalikone (Voting assistance application) from the year 2015. It held answers to various political questions of candidates that took part in the national parliament elections of Finland. I have not saved the dataset to my git repo as I am not sure if its license allows it. The data wrangling file is such that it loads the data from avoindata.fi, so code is executable on any computer. The data wrangling part is also run at the beginning f this document, but it is hidden. This is due to the nature of R markdown files. They do not allow using data that is on the general environment of R, but instead require that the file can be run in standalone mode. Data wrangling can be found here
+The data set used in this work are asnwers candidates gave to Yle's vaalikone (Voting assistance application) from the year 2015. It held answers to various political questions of candidates that took part in the national parliament elections of Finland. I have not saved the dataset to my git repo as I am not sure if its license allows it. The data wrangling file is such that it loads the data from avoindata.fi, so code is executable on any computer. The data wrangling part is also run at the beginning f this document, but it is hidden. This is due to the nature of R markdown files. They do not allow using data that is on the general environment of R, but instead require that the file can be run in standalone mode. Data wrangling can be found here https://github.com/hbhjj/IODS-Final/blob/master/create_vaalikone_final_assignement.R
 
 The data set I will use contains an identifier variable id and party variable that indicates which party the candidate represents. shorter_unempl_benefit variable where larger number means that individual is more willing to shorten the time that unemployed is able to receive unemployment benefits that are tied to their prior salary level. basic_income variable indicates if candidate would be willing to replace basic social sequrity payments with basic income. too_easy_welfare indicates if candidate thinks that it is too easy in Finland to stay home and live out of welfare benefits. cant_afford_current_h_spending tells if candidate thinks that Finland can not spend as much money to health and social sequrity as it did on 2015. gov_spend_cuts tells if candidate thinks that best way of balancing public sector financial status is to cut government spending. Variable gov_or_op indicates whether the party that candidate has represented is in the government or in the opposition. This was created from the party variable, so those that were running for Keskusta, Kokoomus and Perussuomalaiset are in the "government" category and those that were representing Vihreät, SDP, RKP, Vasemmistoliitto or Kristillisdemokraatit are in the "opposition category..
 
@@ -241,14 +241,14 @@ corstarsl <- function(x){
 
 ```{r, message=FALSE,results='markup', fig.cap= "Table 1. Correlations"}
 
-#create the table and print it using gridExtra
+#create the table and print it using kable
 library(gridExtra)
 library(knitr)
 cortab <- corstarsl(vaalicor)
-kable(cortab, padding=10)
+kable(cortab, format="markdown", padding=10, caption="Table 1. Correlations")
 ```
 
-Other than attitude towards basic income, all variables are positively correlated with each other. All correlations are statistically significant. Government or oppostition seems to correlate most heavily with government spending cuts and too easy to live off the welfare. I would expect that these at least will have a significant connection in the logistic regression model.
+I used kable-function of knitr to print the table, as markdown otherwise makes it really ugly and hard to read. Other than attitude towards basic income, all variables are positively correlated with each other. All correlations are statistically significant. Government or oppostition seems to correlate most heavily with government spending cuts and too easy to live off the welfare. I would expect that these at least will have a significant connection in the logistic regression model.
 
 Basic income being negatively correlated with other variables goes against my prior assumptions. I should have remembered that the current government is testing basic income.
 
